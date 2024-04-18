@@ -1,7 +1,7 @@
+import API_KEY from '/env.js'
 const form = document.querySelector("form");
 const gifSection = document.querySelector('#gif-section');
 const removeButton = document.querySelector('#remove-button');
-const API_KEY = document.querySelector('#api-key').value;
 
 
 form.addEventListener("submit", async (e) => {
