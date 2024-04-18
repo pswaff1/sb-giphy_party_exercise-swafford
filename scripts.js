@@ -1,4 +1,4 @@
-import API_KEY from '/env.js'
+import API_KEY from '/env.js';
 const form = document.querySelector("form");
 const gifSection = document.querySelector('#gif-section');
 const removeButton = document.querySelector('#remove-button');
@@ -10,14 +10,14 @@ form.addEventListener("submit", async (e) => {
 
     // Get search term from html file
     const searchTerm = document.querySelector("#search_term").value;
-    console.log(`API Key: ${API_KEY}`);
+    
     // Get results from session storage or from API call if not in sessionStorage
     let res = JSON.parse(sessionStorage.getItem(searchTerm)) || await axios({
         method: "get",
         url: "http://api.giphy.com/v1/gifs/search",
         params: {
             q: searchTerm,
-            api_key: "test",
+            api_key: API_KEY,
             rating: 'g'
         }
     });
